@@ -1,0 +1,14 @@
+#!/bin/bash
+
+zsh_dir=~/.zsh
+
+for file in .*rc; do
+    cp $file ~/new_files/
+done
+
+mkdir ~/.zsh_test
+git clone https://github.com/zsh-users/zsh-autosuggestions $zsh_dir/zsh-autosuggestions
+git clone git://github.com/wting/autojump.git $zsh_dir/autojump
+
+cd ~/.zsh/autojump && ./install.py
+
